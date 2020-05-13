@@ -124,7 +124,7 @@ static int escape( int ch ) {
   * @return Pointer to the null character of the destination string. */
 static char* atoesc( char* dest, char const* src, int len ) {
     for( int i = 0; src[i] != '\0' && ( i < len || 0 > len ); ++dest, ++i ) {
-        if ( src[i] >= ' ' && src[i] != '\"' && src[i] != '\\' && src[i] != '/' )
+        if ( src[i] != '\"' && src[i] != '\\' )
             *dest = src[i];
         else {
             *dest++ = '\\';
